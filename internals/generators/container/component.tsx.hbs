@@ -1,0 +1,30 @@
+/**
+ *
+ * {{properCase name}}
+ *
+ */
+
+import React, { useEffect } from 'react';
+
+interface {{properCase name}}Props {
+  data: any;
+  onDefaultAction: () => void;
+}
+
+const {{properCase name}}: React.FC<{{properCase name}}Props> = ({ data, onDefaultAction }) => {
+  useEffect(() => {
+    onDefaultAction();
+  }, [onDefaultAction]);
+
+  useEffect(() => {
+    if (data) {
+      console.log('Data from {{properCase name}}:', data);
+    }
+  }, [data]);
+
+  return (
+    <div>{{properCase name}} Container</div>
+  );
+};
+
+export default {{properCase name}};

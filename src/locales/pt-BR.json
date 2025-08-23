@@ -1,0 +1,46 @@
+{
+  "welcome": "Bem-vindo ao aplicativo!",
+  "auth": {
+    "hero": {
+      "title": "Visando tornar-se uma empresa modelo na indústria de marketing de rede (MLM)"
+    },
+    "login": {
+      "title": "Faça login na sua conta",
+      "username": "Nome de usuário",
+      "password": "Senha",
+      "button": "Entrar",
+      "forgotPassword": "Esqueceu a senha?"
+    },
+    "forgotPassword": {
+      "title": "Esqueceu a senha?",
+      "description": "Digite o email associado à conta. Enviaremos um email com instruções para redefinir sua senha.",
+      "emailPlaceholder": "Digite seu email",
+      "button": "Enviar Link"
+    },
+    "resetPassword": {
+      "title": "Redefina sua senha",
+      "description": "Crie uma senha que seja segura e fácil de lembrar.",
+      "newPasswordPlaceholder": "Digite sua nova senha",
+      "confirmPasswordPlaceholder": "Confirme sua nova senha",
+      "button": "Redefinir Senha"
+    },
+    "signUp": {
+      "usernamePlaceholder": "Digite seu nome de usuário",
+      "emailPlaceholder": "Digite seu email",
+      "passwordPlaceholder": "Digite sua senha",
+      "confirmPasswordPlaceholder": "Confirme sua senha",
+      "button": "Cadastrar"
+    },
+    "backToLogin": "Voltar ao login",
+    "validation": {
+      "required": "Este campo é obrigatório",
+      "username": "Por favor, digite seu nome de usuário!",
+      "password": "Por favor, digite sua senha!",
+      "email": "Por favor, digite seu email!",
+      "emailValid": "Por favor, digite um endereço de email válido!",
+      "passwordConfirm": "Por favor, confirme sua senha!",
+      "passwordMatch": "As duas senhas não coincidem!",
+      "passwordLength": "A senha deve ter pelo menos 8 caracteres!"
+    }
+  }
+}

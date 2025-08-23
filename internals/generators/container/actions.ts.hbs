@@ -1,0 +1,29 @@
+/*
+ *
+ * {{properCase name}} actions
+ *
+ */
+
+import { createAction } from '@reduxjs/toolkit';
+import {{camelCase name}}Constants from './constants';
+
+export const defaultAction = createAction(
+  {{camelCase name}}Constants.DEFAULT_ACTION,
+  function prepare() {
+    return { payload: {} };
+  },
+);
+
+export const defaultActionSuccess = createAction(
+  {{camelCase name}}Constants.DEFAULT_ACTION_SUCCESS,
+  function prepare(data: any) {
+    return { payload: { data } };
+  },
+);
+
+export const defaultActionError = createAction(
+  {{camelCase name}}Constants.DEFAULT_ACTION_ERROR,
+  function prepare(error: any) {
+    return { payload: { error } };
+  },
+);

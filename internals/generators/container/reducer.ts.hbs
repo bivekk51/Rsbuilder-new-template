@@ -1,0 +1,38 @@
+/*
+ *
+ * {{properCase name}} reducer
+ *
+ */
+
+import { createReducer } from '@reduxjs/toolkit';
+import { defaultAction, defaultActionSuccess, defaultActionError } from './actions';
+
+export interface {{properCase name}}State {
+  data: any;
+  loading: boolean;
+  error: string | null;
+}
+
+export const initialState: {{properCase name}}State = {
+  data: null,
+  loading: false,
+  error: null,
+};
+
+const {{camelCase name}}Reducer = createReducer(initialState, (builder) => {
+  builder
+    .addCase(defaultAction, (state) => {
+      state.loading = true;
+      state.error = null;
+    })
+    .addCase(defaultActionSuccess, (state, action) => {
+      state.loading = false;
+      state.data = action.payload.data;
+    })
+    .addCase(defaultActionError, (state, action) => {
+      state.loading = false;
+      state.error = action.payload.error;
+    });
+});
+
+export default {{camelCase name}}Reducer;

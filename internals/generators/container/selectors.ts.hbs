@@ -1,0 +1,25 @@
+/*
+ *
+ * {{properCase name}} selectors
+ *
+ */
+
+import { createSelector } from 'reselect';
+import { {{properCase name}}State, initialState } from './reducer';
+
+const select{{properCase name}}Domain = (state: any) => state.{{camelCase name}} || initialState;
+
+const makeSelectData = () =>
+  createSelector(select{{properCase name}}Domain, (substate: {{properCase name}}State) => substate.data);
+
+const makeSelectLoading = () =>
+  createSelector(select{{properCase name}}Domain, (substate: {{properCase name}}State) => substate.loading);
+
+const makeSelectError = () =>
+  createSelector(select{{properCase name}}Domain, (substate: {{properCase name}}State) => substate.error);
+
+export const {{camelCase name}}Selectors = {
+  data: makeSelectData(),
+  loading: makeSelectLoading(),
+  error: makeSelectError(),
+};

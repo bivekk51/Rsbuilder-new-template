@@ -1,0 +1,47 @@
+/**
+ *
+ * {{properCase name}}
+ *
+ */
+
+import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { compose } from 'redux';
+
+import useInjectSaga from '../../utils/injectSaga';
+import useInjectReducer from '../../utils/injectReducer';
+import {{properCase name}} from './{{properCase name}}';
+import { {{camelCase name}}Selectors } from './selectors';
+import reducer from './reducer';
+{{#if wantSaga}}
+import saga from './saga';
+{{/if}}
+import { defaultAction } from './actions';
+
+const key = '{{camelCase name}}';
+
+const mapStateToProps = createStructuredSelector({
+  data: {{camelCase name}}Selectors.data,
+  loading: {{camelCase name}}Selectors.loading,
+  error: {{camelCase name}}Selectors.error,
+});
+
+function mapDispatchToProps(dispatch: any) {
+  return {
+    onDefaultAction: () => dispatch(defaultAction()),
+  };
+}
+
+const withReducer = useInjectReducer({ key, reducer });
+{{#if wantSaga}}
+const withSaga = useInjectSaga({ key, saga });
+{{/if}}
+
+const withConnect = connect(mapStateToProps, mapDispatchToProps);
+
+export default compose(
+  withReducer,
+  {{#if wantSaga}}withSaga,{{/if}}
+  withConnect,
+)({{properCase name}}) as React.ComponentType<any>;

@@ -1,0 +1,111 @@
+@import './assets/fonts/fonts.css';
+
+/* Reset default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+:root {
+  font-family: 'Aileron', Inter, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Add Aileron utility classes */
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-heavy {
+  font-weight: 800;
+}
+
+.font-black {
+  font-weight: 900;
+}
+
+.font-italic {
+  font-style: italic;
+}
+
+/* Responsive typography and form controls for zoom consistency */
+.ant-form-item-label > label {
+  font-size: clamp(14px, 1.2vw, 16px) !important;
+}
+
+.ant-input,
+.ant-input-password input {
+  font-size: clamp(14px, 1.2vw, 16px) !important;
+  min-height: clamp(40px, 4vw, 48px) !important;
+}
+
+.ant-btn {
+  font-size: clamp(14px, 1.2vw, 16px) !important;
+  min-height: clamp(40px, 4vw, 48px) !important;
+}
+
+/* Ensure desktop maintains minimum readable sizes */
+@media (min-width: 1024px) {
+  .ant-form-item-label > label {
+    font-size: max(14px, 1vw) !important;
+  }
+
+  .ant-input,
+  .ant-input-password input {
+    font-size: max(14px, 1vw) !important;
+    min-height: max(40px, 3.2vw) !important;
+  }
+
+  .ant-btn {
+    font-size: max(14px, 1vw) !important;
+    min-height: max(40px, 3.2vw) !important;
+  }
+}
+
+/* Prevent excessive scaling on very large screens */
+@media (min-width: 1600px) {
+  .ant-form-item-label > label {
+    font-size: 16px !important;
+  }
+
+  .ant-input,
+  .ant-input-password input {
+    font-size: 16px !important;
+    min-height: 48px !important;
+  }
+
+  .ant-btn {
+    font-size: 16px !important;
+    min-height: 48px !important;
+  }
+}

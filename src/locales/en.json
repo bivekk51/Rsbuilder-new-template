@@ -1,0 +1,46 @@
+{
+  "welcome": "Welcome to the App!",
+  "auth": {
+    "hero": {
+      "title": "Aiming to become a model company in the network marketing (MLM) industry"
+    },
+    "login": {
+      "title": "Login to your account",
+      "username": "Username",
+      "password": "Password",
+      "button": "Login",
+      "forgotPassword": "Forgot Password?"
+    },
+    "forgotPassword": {
+      "title": "Forgot password?",
+      "description": "Enter your email associated with the account. We will send you an email with instruction to reset your password.",
+      "emailPlaceholder": "Enter your email",
+      "button": "Send Link"
+    },
+    "resetPassword": {
+      "title": "Reset your password",
+      "description": "Create a password that is secure and easy to remember.",
+      "newPasswordPlaceholder": "Enter your new password",
+      "confirmPasswordPlaceholder": "Confirm your new password",
+      "button": "Reset Password"
+    },
+    "signUp": {
+      "usernamePlaceholder": "Enter your username",
+      "emailPlaceholder": "Enter your email",
+      "passwordPlaceholder": "Enter your password",
+      "confirmPasswordPlaceholder": "Confirm your password",
+      "button": "Sign Up"
+    },
+    "backToLogin": "Back to login",
+    "validation": {
+      "required": "This field is required",
+      "username": "Please input your username!",
+      "password": "Please input your password!",
+      "email": "Please input your email!",
+      "emailValid": "Please enter a valid email address!",
+      "passwordConfirm": "Please confirm your password!",
+      "passwordMatch": "The two passwords do not match!",
+      "passwordLength": "Password must be at least 8 characters long!"
+    }
+  }
+}

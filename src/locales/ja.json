@@ -1,0 +1,46 @@
+{
+  "welcome": "アプリへようこそ！",
+  "auth": {
+    "hero": {
+      "title": "ネットワークマーケティング（MLM）業界のモデル企業を目指しています"
+    },
+    "login": {
+      "title": "アカウントにログイン",
+      "username": "ユーザー名",
+      "password": "パスワード",
+      "button": "ログイン",
+      "forgotPassword": "パスワードをお忘れですか？"
+    },
+    "forgotPassword": {
+      "title": "パスワードをお忘れですか？",
+      "description": "アカウントに関連付けられたメールアドレスを入力してください。パスワードをリセットするための手順をメールでお送りします。",
+      "emailPlaceholder": "メールアドレスを入力",
+      "button": "リンクを送信"
+    },
+    "resetPassword": {
+      "title": "パスワードをリセット",
+      "description": "安全で覚えやすいパスワードを作成してください。",
+      "newPasswordPlaceholder": "新しいパスワードを入力",
+      "confirmPasswordPlaceholder": "新しいパスワードを確認",
+      "button": "パスワードをリセット"
+    },
+    "signUp": {
+      "usernamePlaceholder": "ユーザー名を入力",
+      "emailPlaceholder": "メールアドレスを入力",
+      "passwordPlaceholder": "パスワードを入力",
+      "confirmPasswordPlaceholder": "パスワードを確認",
+      "button": "サインアップ"
+    },
+    "backToLogin": "ログインに戻る",
+    "validation": {
+      "required": "この項目は必須です",
+      "username": "ユーザー名を入力してください！",
+      "password": "パスワードを入力してください！",
+      "email": "メールアドレスを入力してください！",
+      "emailValid": "有効なメールアドレスを入力してください！",
+      "passwordConfirm": "パスワードを確認してください！",
+      "passwordMatch": "パスワードが一致しません！",
+      "passwordLength": "パスワードは8文字以上である必要があります！"
+    }
+  }
+}
