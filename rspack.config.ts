@@ -57,8 +57,15 @@ export default defineConfig({
     new rspack.HtmlRspackPlugin({
       template: './index.html',
     }),
-    new rspack.EnvironmentPlugin({
-      API_BASE_URL: 'http://localhost:3000/api/test', // default value for local dev
+    new rspack.DefinePlugin({
+      'process.env.REACT_APP_LOCAL_URL': JSON.stringify(
+        process.env.REACT_APP_LOCAL_URL || 'http://localhost:3000',
+      ),
+      'process.env.REACT_APP_API_BASE_URL': JSON.stringify(
+        process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001',
+      ),
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
+      'process.env.APP_ENV': JSON.stringify(process.env.APP_ENV || 'development'),
     }),
     isDev ? new ReactRefreshRspackPlugin() : null,
   ].filter(Boolean),

@@ -6,62 +6,45 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import React, { useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, Card, Space } from 'antd';
-
-
+import { useDispatch, useSelector } from 'react-redux';
 
 import '../../App.css';
 import AppRoutes from '../../routes/AppRoutes';
+import { AppController } from './controller';
+import { appSelectors } from './selectors';
 
+interface AppProps {}
 
-interface AppProps {
-  isDarkMode: boolean;
-  data: any;
-  loading: boolean;
-  error: string | null;
-  appLoaded: boolean;
-  toggleTheme: () => void;
-  onDefaultAction: () => void;
-  setAppLoaded: () => void;
-}
-
-const App: React.FC<AppProps> = ({
-  isDarkMode,
-  data,
-  loading,
-  error,
-  appLoaded,
-  toggleTheme,
-  onDefaultAction,
-  setAppLoaded,
-}) => {
+const App: React.FC<AppProps> = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const store = useSelector((state: any) => state);
 
-  // useEffect(() => {
-  //   // Simulate app initialization (you can add real initialization logic here)
-  //   const timer = setTimeout(() => {
-  //     setAppLoaded();
-  //   }, 2000); // Show splash screen for 2 seconds
+  /**
+   * Initialize controller with dispatch and getState
+   * Memoized to prevent unnecessary re-instantiation
+   */
+  const controller = useMemo(
+    () => new AppController(dispatch, () => store),
+    [dispatch, store],
+  );
 
-  //   return () => clearTimeout(timer);
-  // }, [setAppLoaded]);
-
-  // // Show splash screen while app is loading
-  // if (!appLoaded) {
-  //   return <SplashScreen />;
-  // }
+  // Get state from selectors
+  const isDarkMode = useSelector(appSelectors.isDarkMode);
+  const data = useSelector(appSelectors.data);
+  const loading = useSelector(appSelectors.loading);
+  const error = useSelector(appSelectors.error);
+  const appLoaded = useSelector(appSelectors.appLoaded);
 
   return (
-    
-      <div
-        className="App"
-        style={{ margin: 0, padding: 0, minHeight: '100vh', width: '100%' }}
-      >
-        <AppRoutes />
-      </div>
-  
+    <div
+      className="App"
+      style={{ margin: 0, padding: 0, minHeight: '100vh', width: '100%' }}
+    >
+      <AppRoutes />
+    </div>
   );
 };
 
