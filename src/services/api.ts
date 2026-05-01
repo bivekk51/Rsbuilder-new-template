@@ -88,4 +88,4 @@ class ApiClient {
 }
 
 export const apiClient = new ApiClient();
-export * from './apiConstants';
+export * from '../globalConstants';

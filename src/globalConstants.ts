@@ -3,7 +3,12 @@ import { CreateUUID } from './utils/helper';
 import SessionDB from './utils/sessionStorage';
 
 const BASE_API = `${config.BASE_API}/api`;
-const SSS_BASE_API = `${config.SSS_API_BASE_URL}/api`;
+// Legacy/exported base for compatibility with older imports
+export const BASE_API_URL = BASE_API;
+
+// External APIs used in the template
+export const FAKE_STORE_API = 'https://fakestoreapi.com';
+
 
 export const V1_API = `${BASE_API}/v1`;
 export const CURRENT_API = V1_API;
@@ -19,7 +24,15 @@ export const API_ENDPOINTS = {
     DUMMY_API: `/test`,
     PUBLIC_TEST_API: 'https://jsonplaceholder.typicode.com/todos/1',
   },
+  products: {
+    GET_ALL_PRODUCTS: `${FAKE_STORE_API}/products`,
+    GET_PRODUCT_BY_ID: (id?: string) => `${FAKE_STORE_API}/products${id ? `/${id}` : ''}`,
+    GET_CATEGORIES: `${FAKE_STORE_API}/products/categories`,
+  },
 } as const;
+
+// Provide a camelCase alias to match older `APIEndPoints` export
+export const APIEndPoints = API_ENDPOINTS;
 
 export const DEFAULT_AVATAR = 'https://randomuser.me/api/portraits/men/32.jpg';
 
@@ -52,17 +65,5 @@ export const getRegisterFlowEndpoints = (countryCode?: string) => {
   return API_ENDPOINTS;
 };
 
-export const COUNTRY_API_CONFIG = {
-  DEFAULT: {
-    dashboardPage: {},
-  },
-} as const;
-
-export const getCountryApiEndpoints = <T extends keyof typeof COUNTRY_API_CONFIG.DEFAULT>(
-  countryCode: string | undefined,
-  page: T,
-) => {
-  return COUNTRY_API_CONFIG.DEFAULT as any;
-};
 
 export default API_ENDPOINTS;
