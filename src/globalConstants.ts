@@ -3,10 +3,10 @@ import { CreateUUID } from './utils/helper';
 import SessionDB from './utils/sessionStorage';
 
 const BASE_API = `${config.BASE_API}/api`;
-// Legacy/exported base for compatibility with older imports
+
 export const BASE_API_URL = BASE_API;
 
-// External APIs used in the template
+
 export const FAKE_STORE_API = 'https://fakestoreapi.com';
 
 
@@ -60,10 +60,7 @@ export const APIHeadersWithAuth = (token?: Token) => {
   return headers;
 };
 
-export const getRegisterFlowEndpoints = (countryCode?: string) => {
-  // simple default mapping for template
-  return API_ENDPOINTS;
-};
+
 
 
 export default API_ENDPOINTS;
