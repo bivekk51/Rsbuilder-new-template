@@ -36,7 +36,7 @@ module.exports = {
     },
   ],
   actions: data => {
-    // Generate index.tsx
+    // Generate index.tsx (Redux connection layer)
     const actions = [
       {
         type: 'add',
@@ -46,11 +46,19 @@ module.exports = {
       },
     ];
 
-    // Generate component
+    // Generate component (Container/Orchestration layer)
     actions.push({
       type: 'add',
       path: '../../src/containers/{{properCase name}}/{{properCase name}}.tsx',
       templateFile: './container/component.tsx.hbs',
+      abortOnFail: true,
+    });
+
+    // Generate controller (Business logic layer)
+    actions.push({
+      type: 'add',
+      path: '../../src/containers/{{properCase name}}/controller.ts',
+      templateFile: './container/controller.ts.hbs',
       abortOnFail: true,
     });
 
@@ -105,6 +113,46 @@ module.exports = {
         abortOnFail: true,
       });
     }
+
+    // Generate messages (i18n)
+    actions.push({
+      type: 'add',
+      path: '../../src/containers/{{properCase name}}/messages.ts',
+      templateFile: './container/messages.ts.hbs',
+      abortOnFail: true,
+    });
+
+    // Generate model/index.ts
+    actions.push({
+      type: 'add',
+      path: '../../src/containers/{{properCase name}}/model/index.ts',
+      templateFile: './container/model/index.ts.hbs',
+      abortOnFail: true,
+    });
+
+    // Generate model/transformers.ts
+    actions.push({
+      type: 'add',
+      path: '../../src/containers/{{properCase name}}/model/transformers.ts',
+      templateFile: './container/model/transformers.ts.hbs',
+      abortOnFail: true,
+    });
+
+    // Generate model/validation.ts
+    actions.push({
+      type: 'add',
+      path: '../../src/containers/{{properCase name}}/model/validation.ts',
+      templateFile: './container/model/validation.ts.hbs',
+      abortOnFail: true,
+    });
+
+    // Generate hooks/index.ts
+    actions.push({
+      type: 'add',
+      path: '../../src/containers/{{properCase name}}/hooks/index.ts',
+      templateFile: './container/hooks/index.ts.hbs',
+      abortOnFail: true,
+    });
 
     // Add prettify action for TypeScript files
     actions.push({

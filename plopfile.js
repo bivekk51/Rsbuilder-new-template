@@ -73,6 +73,42 @@ module.exports = function (plop) {
           templateFile: 'internals/generators/container/selectors.ts.hbs',
           abortOnFail: true,
         },
+        {
+          type: 'add',
+          path: 'src/containers/{{properCase name}}/controller.ts',
+          templateFile: 'internals/generators/container/controller.ts.hbs',
+          abortOnFail: true,
+        },
+        {
+          type: 'add',
+          path: 'src/containers/{{properCase name}}/messages.ts',
+          templateFile: 'internals/generators/container/messages.ts.hbs',
+          abortOnFail: true,
+        },
+        {
+          type: 'add',
+          path: 'src/containers/{{properCase name}}/model/index.ts',
+          templateFile: 'internals/generators/container/model/index.ts.hbs',
+          abortOnFail: true,
+        },
+        {
+          type: 'add',
+          path: 'src/containers/{{properCase name}}/model/transformers.ts',
+          templateFile: 'internals/generators/container/model/transformers.ts.hbs',
+          abortOnFail: true,
+        },
+        {
+          type: 'add',
+          path: 'src/containers/{{properCase name}}/model/validation.ts',
+          templateFile: 'internals/generators/container/model/validation.ts.hbs',
+          abortOnFail: true,
+        },
+        {
+          type: 'add',
+          path: 'src/containers/{{properCase name}}/hooks/index.ts',
+          templateFile: 'internals/generators/container/hooks/index.ts.hbs',
+          abortOnFail: true,
+        },
       ];
 
       if (data.wantSaga) {

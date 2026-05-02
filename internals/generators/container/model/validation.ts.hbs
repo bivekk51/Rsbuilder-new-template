@@ -1,0 +1,25 @@
+/*
+ *
+ * {{properCase name}} model validation
+ *
+ * Form validation logic and data validation
+ * Returns { isValid, error } objects
+ */
+
+/**
+ * Generic validation result type
+ */
+export interface ValidationResult {
+  isValid: boolean;
+  error?: string;
+}
+
+/**
+ * Validate {{camelCase name}} data
+ */
+export const validate{{properCase name}} = (data: any): ValidationResult => {
+  if (!data) {
+    return { isValid: false, error: '{{properCase name}} data is required' };
+  }
+  return { isValid: true };
+};

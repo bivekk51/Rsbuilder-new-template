@@ -1,0 +1,64 @@
+/*
+ *
+ * {{properCase name}} controller
+ *
+ */
+
+import { defaultAction } from './actions';
+
+/**
+ * {{properCase name}} Controller
+ *
+ * Handles all business logic for the {{properCase name}} container:
+ * - State management coordination
+ * - Business logic orchestration
+ * - Error handling
+ *
+ * All state access goes through getters
+ * All API/Redux calls go through Promise-based methods
+ */
+export class {{properCase name}}Controller {
+  private dispatch: any;
+  private getState: any;
+
+  constructor(dispatch: any, getState: any) {
+    this.dispatch = dispatch;
+    this.getState = getState;
+
+    // Bind all methods
+    this.onDefaultAction = this.onDefaultAction.bind(this);
+  }
+
+  /**
+   * Get the current data
+   */
+  get data(): any {
+    return this.getState().{{camelCase name}}?.data || null;
+  }
+
+  /**
+   * Get the loading state
+   */
+  get loading(): boolean {
+    return this.getState().{{camelCase name}}?.loading || false;
+  }
+
+  /**
+   * Get the current error
+   */
+  get error(): string | null {
+    return this.getState().{{camelCase name}}?.error || null;
+  }
+
+  /**
+   * Fetch default {{camelCase name}} data
+   *
+   * @returns Promise that resolves when action is dispatched
+   */
+  async onDefaultAction(): Promise<void> {
+    return new Promise((resolve) => {
+      this.dispatch(defaultAction());
+      resolve();
+    });
+  }
+}

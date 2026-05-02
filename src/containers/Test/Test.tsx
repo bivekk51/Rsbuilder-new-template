@@ -1,6 +1,6 @@
 /**
  *
- * {{properCase name}}
+ * Test
  *
  * Container/Orchestration layer - initializes controller and wires to view
  */
@@ -8,12 +8,12 @@
 import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { {{properCase name}}Controller } from './controller';
-import { {{camelCase name}}Selectors } from './selectors';
+import { TestController } from './controller';
+import { testSelectors } from './selectors';
 
-interface {{properCase name}}Props {}
+interface TestProps {}
 
-const {{properCase name}}: React.FC<{{properCase name}}Props> = () => {
+const Test: React.FC<TestProps> = () => {
   const dispatch = useDispatch();
   const store = useSelector((state: any) => state);
 
@@ -23,18 +23,18 @@ const {{properCase name}}: React.FC<{{properCase name}}Props> = () => {
    */
   const controller = useMemo(
     () =>
-      new {{properCase name}}Controller(dispatch, () => store),
+      new TestController(dispatch, () => store),
     [dispatch, store],
   );
 
   // Get state from selectors
-  const data = useSelector({{camelCase name}}Selectors.data);
-  const loading = useSelector({{camelCase name}}Selectors.loading);
-  const error = useSelector({{camelCase name}}Selectors.error);
+  const data = useSelector(testSelectors.data);
+  const loading = useSelector(testSelectors.loading);
+  const error = useSelector(testSelectors.error);
 
   return (
     <div>
-      {{properCase name}} Container
+      Test Container
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
@@ -42,4 +42,4 @@ const {{properCase name}}: React.FC<{{properCase name}}Props> = () => {
   );
 };
 
-export default {{properCase name}};
+export default Test;

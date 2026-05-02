@@ -1,6 +1,6 @@
 /**
  *
- * {{properCase name}}
+ * Test
  *
  * Redux connection layer - ONLY place for reducer/saga injection
  */
@@ -9,20 +9,16 @@ import { compose } from 'redux';
 
 import useInjectSaga from '../../utils/injectSaga';
 import useInjectReducer from '../../utils/injectReducer';
-import {{properCase name}} from './{{properCase name}}';
+import Test from './Test';
 import reducer from './reducer';
-{{#if wantSaga}}
 import saga from './saga';
-{{/if}}
 
-const key = '{{camelCase name}}';
+const key = 'test';
 
 const withReducer = useInjectReducer({ key, reducer });
-{{#if wantSaga}}
 const withSaga = useInjectSaga({ key, saga });
-{{/if}}
 
 export default compose(
   withReducer,
-  {{#if wantSaga}}withSaga,{{/if}}
-)({{properCase name}}) as React.ComponentType<any>;
+  withSaga,
+)(Test) as React.ComponentType<any>;
